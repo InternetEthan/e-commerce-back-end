@@ -26,4 +26,9 @@ Tag.init(
   }
 );
 
+Tag.belongsToMany(Product, {
+  through: 'ProductTag', // assuming 'ProductTag' is your join table
+  foreignKey: 'tag_id'
+});
+
 module.exports = Tag;
