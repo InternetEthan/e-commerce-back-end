@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
+const Product = require('./Product.js');
 
 class Tag extends Model {}
 
@@ -26,9 +27,9 @@ Tag.init(
   }
 );
 
-Tag.belongsToMany(Product, {
-  through: 'ProductTag', // assuming 'ProductTag' is your join table
-  foreignKey: 'tag_id'
-});
+// Tag.belongsToMany(Product, {
+//   through: 'ProductTag',
+//   foreignKey: 'tag_id'
+// });
 
 module.exports = Tag;
